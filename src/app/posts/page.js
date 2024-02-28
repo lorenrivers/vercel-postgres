@@ -1,4 +1,5 @@
 import { sql } from "@vercel/postgres";
+import Link from "next/link";
 
 export default async function PostPage() {
   const posts = await sql`SELECT * FROM posts`;
@@ -11,6 +12,7 @@ export default async function PostPage() {
           <li key={post.id}>{post.title}</li>
         ))}
       </ul>
+      <Link href="/posts/add-new">Add New Post</Link>
     </div>
   );
 }
