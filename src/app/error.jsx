@@ -1,4 +1,5 @@
 "use client";
+//error boundary files are always client component
 
 export default function GlobalError({ error, reset }) {
   return (
